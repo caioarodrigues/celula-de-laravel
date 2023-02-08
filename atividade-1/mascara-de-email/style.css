@@ -1,0 +1,52 @@
+*{
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+section{
+    background-color: orangered;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    background-color:cornflowerblue;
+    border: solid 5px white;
+    height: 50vh;
+    width: 50vh;
+    border-radius: 5px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.espaco-validacao{
+    display: grid;
+}   
+
+.espaco-validacao input{
+    padding: 10px;
+    border-radius: 5px;
+    border-color: transparent;
+    outline: none;
+    margin-bottom: 5px;
+}
+
+.espaco-validacao button{
+    padding: 5px;
+    border-radius: 5px;
+    border-color: transparent;
+    background-color: transparent;
+    border: solid 2px white;
+    color: white;
+    width: min-content;
+    cursor: pointer;
+}
+
+.espaco-respota{
+    margin-top: 5px;
+}

@@ -1,0 +1,68 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.todos-celulares{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.celular{
+    background-color: white;
+    display: flex;
+    margin: 5px;
+    height: 200px;
+    width: 420px;
+    border: solid 2px black;
+    overflow:hidden;
+}
+
+.celular div{
+}
+
+#img-celular{
+    position:relative;
+    
+}
+
+#img-celular img{
+
+    height: 100%;
+}
+
+#informacoes-celular{
+    margin-inline-start: 5px;
+}
+
+#vendedor{
+    color: grey;
+    font-weight: bold;
+}
+
+#preco{
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+#parcelas{
+    color: green;
+    font-weight: 200;
+}
+
+body{
+    background-color: grey;
+}
+
+.variacoes{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.variacoes img{
+    height: 5em;
+}
