@@ -11,7 +11,7 @@ header{
 .navegacao{
     background-color: wheat;
     justify-content: center;
-    height:max-content;
+    padding: 10px;
 }
 
 .section-nav{
@@ -33,8 +33,6 @@ header{
 
 .conteudo{
     display: none;
-/*     display: flex; */
-    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -43,7 +41,20 @@ header{
     margin: 10px;
 }
 .conteudo-exibir{
-    width: 100%;
+    margin-top: 10px;
+}
+
+#conteudo2{
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#conteudo2 img{
+    margin-inline: 5px;
+}
+
+#conteudo3{
+    justify-content: center;
 }
 
 body{

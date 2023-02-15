@@ -1,0 +1,23 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+main{
+    display: grid;
+    margin: 10px;
+    padding: 10px;
+    background-color: gainsboro;
+    border-radius: 5px;
+    border: solid 1px black;
+}
+
+body{
+    height: 100vh;
+    background-color: limegreen;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

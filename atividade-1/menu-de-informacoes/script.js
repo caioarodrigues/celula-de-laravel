@@ -1,27 +1,35 @@
+let anterior;
+
 function exibeConteudo(id){
     const elemento = document.querySelector(`#${id}`);
 
-    elemento.setAttribute('id', 'visivel');
+    elemento.setAttribute('class', 'visivel');
     elemento.style.display = 'flex';
 }
 
-function escondeConteudo(){
-    const conteudoVisivel = Array.from(document.querySelectorAll('#visivel'));
-
-    if(!conteudoVisivel) return;
+function escondeConteudo(classe){
+    const conteudoVisivel = document.querySelectorAll('.visivel');
 
     conteudoVisivel.forEach(conteudo => {
-        conteudo.removeAttribute('visivel');
         conteudo.style.display = 'none';
     });
 }
 
-Array.from(document.querySelectorAll('.menu')).forEach(menu => {
+document.querySelectorAll('.menu').forEach(menu => {
     menu.onclick = e => {
         const classe = e.target
             .className.split(' ')[1];
 
-        escondeConteudo();
+        escondeConteudo(classe);
+
+        if(classe === anterior){
+            anterior = null;
+
+            return;
+        }
+
         exibeConteudo(classe);
+
+        anterior = classe;
     }
 });

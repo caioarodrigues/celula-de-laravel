@@ -1,11 +1,11 @@
+const caminhoJSON = './produtos.json';
 const todosCelulares = document.querySelector('.todos-celulares');
 
 async function getData(){
-    const url = 'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7d734c77-7d4c-4e60-b2c8-a132e4445dca/produtos.json?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230207%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230207T190810Z&X-Amz-Expires=86400&X-Amz-Signature=a624b051ef24a6d290b7eba1f24d7ba2ac238563e99a8d18e4ec3b06c7f6923c&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22produtos.json%22&x-id=GetObject';
-    const resultado = await fetch(url)
+    const resultado = await fetch(caminhoJSON)
         .then(res => res.json())
         .catch(err => alert(`erro: ${err.message}`));
-
+        
     return resultado;
 }
 

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Máscaras de entrada em JavaScript</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" name="cpf" maxlength="14">
+      
+        <label for="cep">CEP:</label>
+        <input type="text" id="cep" name="cep" maxlength="9">
+      
+        <label for="valor">Valor:</label>
+        <input type="text" id="valor" name="valor">
+    </main>
+
+  <script>
+    function mascaraCPF(cpf){
+      return cpf.replace(/[^0-9]/g, '').slice(0, 11)
+                .replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+    }
+
+    function mascaraCEP(cep){
+      return cep.replace(/[^0-9]/g, '').slice(0, 8)
+                .replace(/(\d{5})(\d{3})/, '$1-$2');
+    }
+
+    function mascaraValor(valor){
+      if (!isNaN(valor)) {
+        const valorSemPonto = valor.replace(/[^\d]/g, '');
+        const valorEmCentavos = Number(valorSemPonto);
+        if (valor.indexOf('.') >= 0) {
+          // Se há um ponto, consideramos que é um valor decimal
+          return 'R$ ' + (valorEmCentavos / 100).toLocaleString('pt-BR', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+          });
+        } else {
+          // Caso contrário, é um valor inteiro
+          return 'R$ ' + (valorEmCentavos).toLocaleString('pt-BR') + ',00';
+        }
+      } else {
+        return valor;
+      }
+    }
+
+    const cpfInput = document.getElementById('cpf');
+    const cepInput = document.getElementById('cep');
+    const valorInput = document.getElementById('valor');
+
+    cpfInput.addEventListener('input', function() {
+      cpfInput.value = mascaraCPF(cpfInput.value);
+    });
+
+    cepInput.addEventListener('input', function() {
+      cepInput.value = mascaraCEP(cepInput.value);
+    });
+
+    valorInput.addEventListener('blur', function() {
+      valorInput.value = mascaraValor(valorInput.value);
+    });
+  </script>
+</body>
+</html>
