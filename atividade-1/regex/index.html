@@ -51,15 +51,15 @@
     const cepInput = document.getElementById('cep');
     const valorInput = document.getElementById('valor');
 
-    cpfInput.addEventListener('input', function() {
+    cpfInput.addEventListener('input', () => {
       cpfInput.value = mascaraCPF(cpfInput.value);
     });
 
-    cepInput.addEventListener('input', function() {
+    cepInput.addEventListener('input', () => {
       cepInput.value = mascaraCEP(cepInput.value);
     });
 
-    valorInput.addEventListener('blur', function() {
+    valorInput.addEventListener('blur', () => {
       valorInput.value = mascaraValor(valorInput.value);
     });
   </script>
